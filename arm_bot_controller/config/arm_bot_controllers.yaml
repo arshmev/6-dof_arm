@@ -37,7 +37,8 @@ gripper_controller:
   ros__parameters:
     joints:
       - finger_joint1
-    # interface_name: position
+      
+    interface_name: position
       
     command_interfaces:
       - position

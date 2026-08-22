@@ -6,7 +6,7 @@
         <xacro:property name="PI" value="3.14159265359" />
 
             <hardware>
-                <plugin>ign_ros2_control/IgnitionSystem</plugin>
+                <plugin>gz_ros2_control/GazeboSimSystem</plugin>
             </hardware>
         
             

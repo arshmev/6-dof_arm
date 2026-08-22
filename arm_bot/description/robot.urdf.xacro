@@ -62,7 +62,7 @@
     <visual>
       <origin rpy="3.14 0 0" xyz="0 0 0.07785"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/basecone.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/basecone.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -71,7 +71,7 @@
     <collision>
       <origin rpy="3.14 0 0" xyz="0 0 0.07785"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/basecone.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/basecone.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -85,7 +85,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/body20.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/body20.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -94,7 +94,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/body20.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/body20.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -110,7 +110,7 @@
     <visual>
       <origin rpy="3.14 0 0.785" xyz="0 0 0.0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48_20p.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/Ring48_20p.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -119,7 +119,7 @@
     <collision>
       <origin rpy="3.14 0 0.785" xyz="0 0 0.0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48_20p.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/Ring48_20p.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -133,7 +133,7 @@
     <visual>
       <origin rpy="0 0 3.14" xyz="0.0556 0.0253 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/shoulderplate.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/shoulderplate.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -142,7 +142,7 @@
     <collision>
       <origin rpy="0 0 3.14" xyz="0.0556 0.0253 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/shoulderplate.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/shoulderplate.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -156,7 +156,7 @@
     <visual>
       <origin rpy="-1.5707 0 1.5707" xyz="0 0 0.057"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/shouldershell.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/shouldershell.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -165,7 +165,7 @@
     <collision>
       <origin rpy="-1.5707 0 1.5707" xyz="0 0 0.057"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/shouldershell.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/shouldershell.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -179,7 +179,7 @@
     <visual>
       <origin rpy="0 1.5707 0" xyz="-0.062 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/shouldercap.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/shouldercap.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -188,7 +188,7 @@
     <collision>
       <origin rpy="0 1.5707 0" xyz="-0.062 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/shouldercap.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/shouldercap.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -202,7 +202,7 @@
     <visual>
       <origin rpy="0 1.5707 0" xyz="0.005 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/body20.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/body20.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -211,7 +211,7 @@
     <collision>
       <origin rpy="0 1.5707 0" xyz="0.005 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/body20.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/body20.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -227,7 +227,7 @@
     <visual>
       <origin rpy="1.5707 0.785 -1.5707" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48_20p.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/Ring48_20p.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -236,7 +236,7 @@
     <collision>
       <origin rpy="1.5707 0.785 -1.5707" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48_20p.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/Ring48_20p.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -250,7 +250,7 @@
     <visual>
       <origin rpy="3.14 0 -1.5707" xyz="0.142 0 0.09525"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/UpperArm.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/UpperArm.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -259,7 +259,7 @@
     <collision>
       <origin rpy="3.14 0 -1.5707" xyz="0.142 0 0.09525"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/UpperArm.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/UpperArm.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -273,7 +273,7 @@
     <visual>
       <origin rpy="0 -1.5707 3.14" xyz="-0.03655 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/elbowshell.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/elbowshell.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -282,7 +282,7 @@
     <collision>
       <origin rpy="0 -1.5707 3.14" xyz="-0.03655 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/elbowshell.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/elbowshell.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -296,7 +296,7 @@
     <visual>
       <origin rpy="0 -1.5707 0" xyz="0.022 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/elbowcap.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/elbowcap.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -305,7 +305,7 @@
     <collision>
       <origin rpy="0 -1.5707 0" xyz="0.022 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/elbowcap.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/elbowcap.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -319,7 +319,7 @@
     <visual>
       <origin rpy="0 -1.5707 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/bodyH30_base.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/bodyH30_base.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -328,7 +328,7 @@
     <collision>
       <origin rpy="0 -1.5707 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/bodyH30_base.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/bodyH30_base.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -342,7 +342,7 @@
     <visual>
       <origin rpy="0 -1.5707 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/bodyH30.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/bodyH30.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -351,7 +351,7 @@
     <collision>
       <origin rpy="0 -1.5707 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/bodyH30.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/bodyH30.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -367,7 +367,7 @@
     <visual>
       <origin rpy="1.5707 0.78535 1.5707" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48H30.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/Ring48H30.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -376,7 +376,7 @@
     <collision>
       <origin rpy="1.5707 0.78535 1.5707" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48H30.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/Ring48H30.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -390,7 +390,7 @@
     <visual>
       <origin rpy="3.14 0 0" xyz="-0.025 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Forearm.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/Forearm.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -399,7 +399,7 @@
     <collision>
       <origin rpy="3.14 0 0" xyz="-0.025 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Forearm.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/Forearm.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -413,7 +413,7 @@
     <visual>
       <origin rpy="-1.5707 0 1.5707" xyz="-0.013 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristshell.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/wristshell.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -422,7 +422,7 @@
     <collision>
       <origin rpy="-1.5707 0 1.5707" xyz="-0.013 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristshell.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/wristshell.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -436,7 +436,7 @@
     <visual>
       <origin rpy="0 1.5707 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristcap.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/wristcap.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -445,7 +445,7 @@
     <collision>
       <origin rpy="0 1.5707 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristcap.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/wristcap.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -459,7 +459,7 @@
     <visual>
       <origin rpy="0 1.5707 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/bodyH40.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/bodyH40.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -468,7 +468,7 @@
     <collision>
       <origin rpy="0 1.5707 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/bodyH40.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/bodyH40.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -484,7 +484,7 @@
     <visual>
       <origin rpy="-1.5707 -0.78535 1.5707" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48H40.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/Ring48H40.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -493,7 +493,7 @@
     <collision>
       <origin rpy="-1.5707 -0.78535 1.5707" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48H40.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/Ring48H40.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -507,7 +507,7 @@
     <visual>
       <origin rpy="3.14 0 -1.5707" xyz="0 0 0.012"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristshell.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/wristshell.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -516,7 +516,7 @@
     <collision>
       <origin rpy="3.14 0 -1.5707" xyz="0 0 0.012"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristshell.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/wristshell.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -530,7 +530,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristcap.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/wristcap.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -539,7 +539,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristcap.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/wristcap.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -554,7 +554,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/bodyH40.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/bodyH40.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -563,7 +563,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/bodyH40.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/bodyH40.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -579,7 +579,7 @@
     <visual>
       <origin rpy="0 3.14 0.78535" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48H40.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/Ring48H40.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -588,7 +588,7 @@
     <collision>
       <origin rpy="0 3.14 0.78535" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48H40.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/Ring48H40.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -602,7 +602,7 @@
     <visual>
       <origin rpy="-1.5707 0 1.5707" xyz="0.012 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristshell.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/wristshell.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -611,7 +611,7 @@
     <collision>
       <origin rpy="-1.5707 0 1.5707" xyz="0.012 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristshell.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/wristshell.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -625,7 +625,7 @@
     <visual>
       <origin rpy="0 1.5707 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristcap.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/wristcap.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -634,7 +634,7 @@
     <collision>
       <origin rpy="0 1.5707 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristcap.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/wristcap.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -648,7 +648,7 @@
     <visual>
       <origin rpy="0 1.5707 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/bodyH40.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/bodyH40.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -657,7 +657,7 @@
     <collision>
       <origin rpy="0 1.5707 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/bodyH40.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/bodyH40.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -673,7 +673,7 @@
     <visual>
       <origin rpy="-1.5707 -0.78535 1.5707" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48H40.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/Ring48H40.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -682,7 +682,7 @@
     <collision>
       <origin rpy="-1.5707 -0.78535 1.5707" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48H40.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/Ring48H40.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -696,7 +696,7 @@
     <visual>
       <origin rpy="1.5707 0 1.5707" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/grip2plate.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/grip2plate.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -705,7 +705,7 @@
     <collision>
       <origin rpy="1.5707 0 1.5707" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/grip2plate.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/grip2plate.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -719,7 +719,7 @@
     <visual>
       <origin rpy="0 0 3.14" xyz="-0.1865 0.0304 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/gripperbase2.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/gripperbase2.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -728,7 +728,7 @@
     <collision>
       <origin rpy="0 0 3.14" xyz="-0.1865 0.0304 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/gripperbase2.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/gripperbase2.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -744,7 +744,7 @@
     <visual>
       <origin rpy="0 0 -1.2" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/finger.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/finger.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -753,7 +753,7 @@
     <collision>
       <origin rpy="0 0 -1.2" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/finger.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/finger.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -770,7 +770,7 @@
     <visual>
       <origin rpy="3.14 0 1.2" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/finger.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/finger.STL" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1"/>
@@ -779,7 +779,7 @@
     <collision>
       <origin rpy="3.14 0 1.2" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/finger.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://arm_bot/meshes/finger.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
