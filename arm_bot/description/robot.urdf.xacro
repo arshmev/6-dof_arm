@@ -1,0 +1,793 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
+
+
+  <!-- <xacro:include filename="file:///arm_ws/src/description/arm_gazebo.xacro" />
+  <xacro:include filename="file:///arm_ws/src/description/arm_ros2_control.xacro" /> -->
+
+  <xacro:include filename="$(find arm_bot)/description/arm_gazebo.xacro"/>
+  <xacro:include filename="$(find arm_bot)/description/arm_ros2_control.xacro" />
+
+  
+
+
+  <!-- <xacro:arg name="is_ignition" default="true"/> -->
+
+<!-- <xacro:include filename="robot1.urdf"/> -->
+  <material name="blue">
+    <color rgba="0 0 0.8 1"/>
+  </material>
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+  <material name="green"> 
+    <color rgba="0.0 0.8 0.0 1.0"/>
+  </material>
+  <xacro:macro name="default_inertial" params="mass">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="${mass}" />
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+                     iyy="1.0" iyz="0.0"
+                     izz="1.0" />
+        </inertial>
+  </xacro:macro>
+  
+  <link name="world">
+  
+    <visual>
+      <geometry>
+        <box size="0.2 0.2 0.05"/>
+      </geometry>
+      <material name="green"/>
+      <origin rpy="0 0 0" xyz="0 0 0.025"/>
+      <material>
+        <color rgba="0 0 0.8 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.2 0.2 0.05"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="world_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0.05"/>
+    <parent link="world"/>
+    <child link="base_cone"/>
+  </joint>
+  <link name="base_cone">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="3.14 0 0" xyz="0 0 0.07785"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/basecone.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="3.14 0 0" xyz="0 0 0.07785"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/basecone.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_cone_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0.07785"/>
+    <parent link="base_cone"/>
+    <child link="actuator1"/>
+  </joint>
+  <link name="actuator1">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/body20.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/body20.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Joint_1" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0.0155"/>
+    <parent link="actuator1"/>
+    <child link="ring1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="5" lower="-3.14" upper="3.14" velocity="10"/>
+  </joint>
+  <link name="ring1">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="3.14 0 0.785" xyz="0 0 0.0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48_20p.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="3.14 0 0.785" xyz="0 0 0.0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48_20p.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ring1_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0.008"/>
+    <parent link="ring1"/>
+    <child link="actuator_2_holder"/>
+  </joint>
+  <link name="actuator_2_holder">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="0 0 3.14" xyz="0.0556 0.0253 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/shoulderplate.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 3.14" xyz="0.0556 0.0253 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/shoulderplate.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="actuator2_shell_fixed" type="fixed">
+    <origin rpy="0 0 3.14" xyz="0.0175 0 0"/>
+    <parent link="actuator_2_holder"/>
+    <child link="actuator_2_shell"/>
+  </joint>
+  <link name="actuator_2_shell">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="-1.5707 0 1.5707" xyz="0 0 0.057"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/shouldershell.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="-1.5707 0 1.5707" xyz="0 0 0.057"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/shouldershell.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="actuator2_cap_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0.057"/>
+    <parent link="actuator_2_shell"/>
+    <child link="actuator_2_cap"/>
+  </joint>
+  <link name="actuator_2_cap">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="0 1.5707 0" xyz="-0.062 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/shouldercap.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 1.5707 0" xyz="-0.062 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/shouldercap.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="actuator2_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0.057"/>
+    <parent link="actuator_2_shell"/>
+    <child link="actuator2"/>
+  </joint>
+  <link name="actuator2">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="0 1.5707 0" xyz="0.005 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/body20.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 1.5707 0" xyz="0.005 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/body20.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Joint_2" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0205 0 0"/>
+    <parent link="actuator2"/>
+    <child link="ring2"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="5" lower="-3.14" upper="3.14" velocity="10"/>
+  </joint>
+  <link name="ring2">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="1.5707 0.785 -1.5707" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48_20p.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="1.5707 0.785 -1.5707" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48_20p.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="upper_arm_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="0.02 0 0"/>
+    <parent link="ring2"/>
+    <child link="upper_arm"/>
+  </joint>
+  <link name="upper_arm">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="3.14 0 -1.5707" xyz="0.142 0 0.09525"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/UpperArm.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="3.14 0 -1.5707" xyz="0.142 0 0.09525"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/UpperArm.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="elbow_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0.203"/>
+    <parent link="upper_arm"/>
+    <child link="elbow_shell"/>
+  </joint>
+  <link name="elbow_shell">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="0 -1.5707 3.14" xyz="-0.03655 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/elbowshell.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 -1.5707 3.14" xyz="-0.03655 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/elbowshell.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="elbow_cap_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="elbow_shell"/>
+    <child link="elbow_cap"/>
+  </joint>
+  <link name="elbow_cap">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="0 -1.5707 0" xyz="0.022 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/elbowcap.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 -1.5707 0" xyz="0.022 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/elbowcap.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="actuator3_base_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.037 0 0"/>
+    <parent link="elbow_shell"/>
+    <child link="actuator3_base"/>
+  </joint>
+  <link name="actuator3_base">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="0 -1.5707 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/bodyH30_base.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 -1.5707 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/bodyH30_base.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="actuator3_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="actuator3_base"/>
+    <child link="actuator3"/>
+  </joint>
+  <link name="actuator3">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="0 -1.5707 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/bodyH30.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 -1.5707 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/bodyH30.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Joint_3" type="revolute">
+    <origin rpy="0 0 0" xyz="-0.019 0 0"/>
+    <parent link="actuator3"/>
+    <child link="ring3"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="5" lower="-3.14" upper="3.14" velocity="10"/>
+  </joint>
+  <link name="ring3">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="1.5707 0.78535 1.5707" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48H30.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="1.5707 0.78535 1.5707" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48H30.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fore_arm_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0.151"/>
+    <parent link="ring3"/>
+    <child link="fore_arm"/>
+  </joint>
+  <link name="fore_arm">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="3.14 0 0" xyz="-0.025 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Forearm.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="3.14 0 0" xyz="-0.025 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Forearm.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="actuator4_shell_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0.0267"/>
+    <parent link="fore_arm"/>
+    <child link="actuator4_shell"/>
+  </joint>
+  <link name="actuator4_shell">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="-1.5707 0 1.5707" xyz="-0.013 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristshell.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="-1.5707 0 1.5707" xyz="-0.013 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristshell.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="actuator4_cap_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.0515 0 0"/>
+    <parent link="actuator4_shell"/>
+    <child link="actuator4_cap"/>
+  </joint>
+  <link name="actuator4_cap">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="0 1.5707 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristcap.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 1.5707 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristcap.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="actuator4_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.0041 0 0"/>
+    <parent link="actuator4_shell"/>
+    <child link="actuator4"/>
+  </joint>
+  <link name="actuator4">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="0 1.5707 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/bodyH40.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 1.5707 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/bodyH40.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Joint_4" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0065 0 0"/>
+    <parent link="actuator4"/>
+    <child link="ring4"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="5" lower="-3.14" upper="3.14" velocity="10"/>
+  </joint>
+  <link name="ring4">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="-1.5707 -0.78535 1.5707" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48H40.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="-1.5707 -0.78535 1.5707" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48H40.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="actuator5_shell_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="0.031 0 0"/>
+    <parent link="ring4"/>
+    <child link="actuator5_shell"/>
+  </joint>
+  <link name="actuator5_shell">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="3.14 0 -1.5707" xyz="0 0 0.012"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristshell.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="3.14 0 -1.5707" xyz="0 0 0.012"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristshell.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="actuator5_cap_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 -0.027"/>
+    <parent link="actuator5_shell"/>
+    <child link="actuator5_cap"/>
+  </joint>
+  <link name="actuator5_cap">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristcap.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristcap.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="actuator5_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0.0205"/>
+    <!---0.0041-->
+    <parent link="actuator5_shell"/>
+    <child link="actuator5"/>
+  </joint>
+  <link name="actuator5">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/bodyH40.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/bodyH40.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Joint_5" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0.0065"/>
+    <parent link="actuator5"/>
+    <child link="ring5"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="5" lower="-3.14" upper="3.14" velocity="10"/>
+  </joint>
+  <link name="ring5">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="0 3.14 0.78535" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48H40.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 3.14 0.78535" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48H40.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="actuator6_shell_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0.031"/>
+    <parent link="ring5"/>
+    <child link="actuator6_shell"/>
+  </joint>
+  <link name="actuator6_shell">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="-1.5707 0 1.5707" xyz="0.012 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristshell.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="-1.5707 0 1.5707" xyz="0.012 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristshell.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="actuator6_cap_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.0268 0 0"/>
+    <parent link="actuator6_shell"/>
+    <child link="actuator6_cap"/>
+  </joint>
+  <link name="actuator6_cap">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="0 1.5707 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristcap.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 1.5707 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/wristcap.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="actuator6_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="0.0209 0 0"/>
+    <parent link="actuator6_shell"/>
+    <child link="actuator6"/>
+  </joint>
+  <link name="actuator6">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="0 1.5707 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/bodyH40.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 1.5707 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/bodyH40.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Joint_6" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0065 0 0"/>
+    <parent link="actuator6"/>
+    <child link="ring6"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="5" lower="-3.14" upper="3.14" velocity="10"/>
+  </joint>
+  <link name="ring6">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="-1.5707 -0.78535 1.5707" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48H40.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="-1.5707 -0.78535 1.5707" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/Ring48H40.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gripper_plate_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="0.0044 0 0"/>
+    <parent link="ring6"/>
+    <child link="gripper_plate"/>
+  </joint>
+  <link name="gripper_plate">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="1.5707 0 1.5707" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/grip2plate.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="1.5707 0 1.5707" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/grip2plate.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gripper_base_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="gripper_plate"/>
+    <child link="gripper_base"/>
+  </joint>
+  <link name="gripper_base">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="0 0 3.14" xyz="-0.1865 0.0304 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/gripperbase2.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 3.14" xyz="-0.1865 0.0304 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/gripperbase2.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="finger_joint1" type="revolute">
+    <origin rpy="0 0 0" xyz="0.032 -0.0195 0.005"/>
+    <parent link="gripper_base"/>
+    <child link="finger1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="5" lower="-0.77" upper="0" velocity="10"/>
+  </joint>
+  <link name="finger1">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="0 0 -1.2" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/finger.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 -1.2" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/finger.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="finger_joint2" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0322 0.0195 -0.005"/>
+    <parent link="gripper_base"/>
+    <child link="finger2"/>
+    <axis xyz="0 0 1"/>
+    <mimic joint="finger_joint1" multiplier="-1" offset="0"/>
+    <limit effort="5" lower="0" upper="0.77" velocity="10"/>
+  </joint>
+  <link name="finger2">
+    <xacro:default_inertial mass="1.0"/>
+    <visual>
+      <origin rpy="3.14 0 1.2" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/finger.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="3.14 0 1.2" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/linux/arm_ws/src/arm_bot/meshes/finger.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="endeff_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="0.075 0 0"/>
+    <parent link="gripper_base"/>
+    <child link="endeff"/>
+  </joint>
+  <link name="endeff"/>
+
+</robot>
