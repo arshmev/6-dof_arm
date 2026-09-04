@@ -17,7 +17,7 @@
         <joint name="finger_joint2"/>
     </group>
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
-    <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="base_cone"/>
+    <!-- <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="base_cone"/> -->
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="actuator4_shell" link2="actuator5_shell" reason="Adjacent"/>
     <disable_collisions link1="actuator4_shell" link2="actuator6_shell" reason="Default"/>
